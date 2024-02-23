@@ -1,7 +1,8 @@
 import { groq } from "next-sanity";
-import { client } from "../../sanity/lib/client";
+
 import React from "react";
 import { pageQuery } from "@/lib/pageQuery";
+import { client } from "../../../sanity/lib/client";
 
 async function getPage() {
 
@@ -9,12 +10,12 @@ async function getPage() {
   return data;
 }
 
-const Home:React.FC = async() => {
+const About:React.FC = async() => {
   const data =await  getPage()
 
   return <div>
  {
-  data.filter((item: { slug: { current: string; }; })=>item.slug.current==="/").map((item:any)=>{
+  data.filter((item: { slug: { current: string; }; })=>item.slug.current==="about").map((item:any)=>{
     const {title,slug,pageBuilder}=item || {}
     console.log(item)
     return (
@@ -27,4 +28,4 @@ const Home:React.FC = async() => {
   </div>;
 };
 
-export default Home;
+export default About;

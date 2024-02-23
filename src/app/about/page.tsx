@@ -20,7 +20,7 @@ const About:React.FC = async() => {
     console.log(item)
     return (
       <>
-      {title}
+  hello
       </>
     )
   })

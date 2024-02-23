@@ -1,17 +1,19 @@
 import { groq } from "next-sanity";
-
-
+import {blogHeroSection} from '../lib/fieldQuery'
 
 export const pageQuery = groq`
-*[_type=="page" ]{
+*[_type == "page"] {
   title,
-  slug,
-  pageBuilder[]->{
-  name,
-  sectionColor,
-  content[]{
-    ...
+  "slug": slug.current,
+ pageBuilder[]->{
+_type,
+content[]{
+(_type == "blogHeroSection") => {
+${blogHeroSection}
+},
+
   },
+},
 }
-}
+
 `;

@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import {blogHeroSection} from '../lib/fieldQuery'
+import { blogHeroSection } from '../lib/fieldQuery'
 
 export const pageQuery = groq`
 *[_type == "page"] {
@@ -11,7 +11,6 @@ content[]{
 (_type == "blogHeroSection") => {
 ${blogHeroSection}
 },
-
   },
 },
 }

@@ -17,20 +17,20 @@ export default {
       name: "altText",
       title: "Alt",
       type: "string",
-      description:"please add the alternative text !",
+      description: "please add the alternative text !",
       hidden: ({ parent }) => !parent?.image
-  }),
+    }),
     defineField({
-      name:"hasLink",
-      title:"HasLink",
-      type:"boolean"
+      name: "hasLink",
+      title: "HasLink",
+      type: "boolean"
     }),
     defineField({
       name: 'link',
       title: "Link",
       type: "customLink",
       hidden: ({ parent }) => parent?.hasLink !== true
-  })
-  
+    })
+
   ],
 };

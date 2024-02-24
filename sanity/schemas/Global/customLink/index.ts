@@ -15,14 +15,14 @@ export default {
       name: "linkType",
       title: "Link Type",
       type: "string",
-      description:"select one from it",
+      description: "select one from it",
       options: {
         list: linkList,
         layout: "radio",
         direction: "horizontal",
-      
+
       },
-      initialValue:"internal"
+      initialValue: "internal"
     }),
     defineField({
       name: "slug",

@@ -1,4 +1,5 @@
-import RichText from "../RichText";
+import { PortableText } from "@portabletext/react";
+
 
 
 
@@ -10,7 +11,7 @@ const BlogHeroSection = ({ data }: any) => {
       <div>
         <p>{title}</p>
         <p>{authorName}</p>
-<RichText block={subTitle}/>
+
       </div>
 
       <div>

@@ -1,9 +1,7 @@
 import groq from "groq";
 import { buttonFields, imageFields } from "../common";
 
-
-
-export const blogHeroSection=groq`
+export const blogHeroSection = groq`
 (_type == "blogHeroSection") => {
   _type,
   _id,
@@ -14,8 +12,8 @@ authorName,
   ${imageFields}
     }
 }
-`
-export const techImageListSection=groq`
+`;
+export const techImageListSection = groq`
 (_type=="techImageListSection")=>{
 _type,
 _id,
@@ -24,8 +22,8 @@ _id,
     ${imageFields}
   }
 }
-`
-export const techStoriesSection=groq`
+`;
+export const techStoriesSection = groq`
 (_type=="techStoriesSection")=>{
   _type,
   _key,
@@ -33,8 +31,8 @@ export const techStoriesSection=groq`
   title,
  ${buttonFields},
 }
-`
-export const blogInsightsSection=groq`
+`;
+export const blogInsightsSection = groq`
 (_type=="blogInsightsSection")=>{
   _type,
   _key,
@@ -42,4 +40,26 @@ export const blogInsightsSection=groq`
   title,
  ${buttonFields},
 }
-`
+`;
+export const headerFields = groq`
+   "header":header->{
+    _id,
+    _type,
+    "logoImage":logoImage{
+      hasLink,
+      altText,
+      "link":link{
+      linkType,
+      "slug":slug.current
+      },
+    "image":image.asset->url,
+    },
+navList[]{
+"link":link{
+  label,
+  "slug":slug.current
+}
+}
+    
+  }
+`;

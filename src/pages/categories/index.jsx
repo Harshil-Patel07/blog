@@ -5,12 +5,12 @@ import BlogInsightsSection from "@/components/BlogInsightsSection";
 import Header from "@/components/Header";
 
 
-export default function Home({ pageData }) {
+export default function CategoriesPage({ pageData }) {
   
   return (
     <main>
       {pageData && pageData
-    .filter((page) => page.slug === '/')
+    .filter((page) => page.slug === 'categories')
     .map((page, index) => {
       console.log(page)
       return (
@@ -21,7 +21,6 @@ export default function Home({ pageData }) {
             sections.content && sections.content.map((block,index) => {
               console.log(block._type)
               switch (block._type) {
-                
                 case "blogHeroSection":
                   return <BlogHeroSection key={index} block={block} />;
                 case "techImageListSection":

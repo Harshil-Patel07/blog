@@ -1,4 +1,5 @@
 import groq from "groq";
+import { blogHeroSection, blogInsightsSection, techImageListSection, techStoriesSection } from "./fieldQuery";
 
 export const pageQuery = groq`
 *[_type == "page"] {
@@ -7,21 +8,10 @@ export const pageQuery = groq`
  pageBuilder[]->{
 _type,
 content[]{
-(_type == "blogHeroSection") => {
-title,
-subTitle,
-authorName,
-"heroimage": heroimage{
-  "url":image.asset->url,
-    altText,
-  "link":  link{
-     label,
-       linkType,
-       url,
-       "slug":slug.current    
-  },
-    }
-}
+${blogHeroSection},
+${techImageListSection},
+${techStoriesSection},
+${blogInsightsSection}
   }
 }
 }

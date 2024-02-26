@@ -1,16 +1,44 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import BlogHeroSection from "@/components/BlogHeroSection";
+import TechImageListSection from "@/components/TechImageListSection";
+import TechStoriesSection from "@/components/TechStoriesSection";
+import BlogInsightsSection from "@/components/BlogInsightsSection";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ pageData }) {
-  console.log(pageData);
   return (
     <main>
-      {/* Use the fetched data here */}
+      {pageData &&
+  pageData
+    .filter((page) => page.slug === '/')
+    .map((page, index) => {
+      return page.pageBuilder && page.pageBuilder.map((sections) => (
+        sections.content && sections.content.map((block,index) => {
+          console.log(block._type)
+          switch (block._type) {
+            case "blogHeroSection":
+              return <BlogHeroSection key={index} block={block} />;
+            case "techImageListSection":
+              return <TechImageListSection key={index} block={block} />;
+            case "techStoriesSection":
+              return <TechStoriesSection key={index} block={block} />;
+            case "blogInsightsSection":
+              return <BlogInsightsSection key={index} block={block} />;
+            
+            default:
+              return null; 
+          }
+        })
+      ))
+    })
+}
+
     </main>
   );
 }
+
 
 export async function getStaticProps() {
   try {

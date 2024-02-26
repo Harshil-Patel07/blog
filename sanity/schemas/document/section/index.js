@@ -13,23 +13,15 @@ export default {
       description: "This field is only used for CMS.",
     }),
     defineField({
-      name: "sectionColor",
-      title: "Section Color",
-      type: "string",
-      options: {
-        list: sectionColor,
-        layout: "radio",
-        direction: "horizontal",
-      },
-      initialValue:"white"
-    }),
-
-
-    defineField({
       name: "content",
       title:"Content",
       type: "array",
-      of: [{ type: "blogHeroSection" }],
+      of: [
+        { type: "blogHeroSection" },
+        { type: "techImageListSection" },
+        { type: "techStoriesSection" },
+        {type:"blogInsightsSection"}
+    ],
     }),
   ],
 };

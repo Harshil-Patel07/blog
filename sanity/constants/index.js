@@ -11,3 +11,9 @@ export const linkList=[
     {title:"orange",value:"orange"},
     {title:"darkGray",value:"darkGray"}
   ]
+  
+  export const buttons=[
+    {title:"white",value:"white"},
+    {title:"orange",value:"orange"},
+    {title:"green",value:"green"},
+  ]

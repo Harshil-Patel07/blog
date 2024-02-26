@@ -45,6 +45,9 @@ export default {
     },
     {
       type:"customLink"
+    },
+    {
+      type:"customButton"
     }
   ],
 }

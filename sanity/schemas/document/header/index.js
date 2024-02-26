@@ -17,6 +17,12 @@ export default{
             of:[
                 {type:"navItem"}
             ]
+        }),
+        defineField({
+            name:"socialLinks",
+            title:"Social Links",
+            type:"array",
+            of:[{type:"customLink"}]
         })
     ]
 }

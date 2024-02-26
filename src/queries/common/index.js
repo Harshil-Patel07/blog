@@ -4,9 +4,6 @@ export const imageFields = groq`
 "src":image.asset->url,
     altText,
   "link":  link{
-     label,
-       linkType,
-       url,
        "slug":slug.current    
   },
 `;

@@ -2,6 +2,8 @@ import groq from "groq";
 import {
   blogHeroSection,
   blogInsightsSection,
+  categoriesListeningSection,
+  footerFields,
   headerFields,
   techImageListSection,
   techStoriesSection,
@@ -12,13 +14,15 @@ export const pageQuery = groq`
   title,
   "slug": slug.current,
   ${headerFields},
+  ${footerFields},
  pageBuilder[]->{
 _type,
 content[]{
 ${blogHeroSection},
 ${techImageListSection},
 ${techStoriesSection},
-${blogInsightsSection}
+${blogInsightsSection},
+${categoriesListeningSection}
   }
 }
 }

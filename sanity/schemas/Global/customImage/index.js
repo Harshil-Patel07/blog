@@ -18,19 +18,25 @@ export default {
       title: "Alt",
       type: "string",
       description: "please add the alternative text !",
-      hidden: ({ parent }) => !parent?.image
+      hidden: ({ parent }) => !parent?.image,
     }),
     defineField({
       name: "hasLink",
       title: "HasLink",
-      type: "boolean"
+      type: "boolean",
     }),
     defineField({
-      name: 'link',
+      name: "link",
       title: "Link",
-      type: "customLink",
-      hidden: ({ parent }) => parent?.hasLink !== true
-    })
-
+      type: "object",
+      hidden: ({ parent }) => parent?.hasLink !== true,
+      fields: [
+        defineField({
+          name: "slug",
+          title: "slug",
+          type: "slug",
+        }),
+      ],
+    }),
   ],
 };

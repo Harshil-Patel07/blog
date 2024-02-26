@@ -3,10 +3,10 @@ import TechImageListSection from "@/components/TechImageListSection";
 import TechStoriesSection from "@/components/TechStoriesSection";
 import BlogInsightsSection from "@/components/BlogInsightsSection";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 
 export default function Home({ pageData }) {
-  
   return (
     <main>
       {pageData && pageData
@@ -36,6 +36,7 @@ export default function Home({ pageData }) {
             })
           ))
         }
+          <Footer block={page.footer} />
         
         </div>
       )

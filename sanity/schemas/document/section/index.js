@@ -20,7 +20,8 @@ export default {
         { type: "blogHeroSection" },
         { type: "techImageListSection" },
         { type: "techStoriesSection" },
-        {type:"blogInsightsSection"}
+        {type:"blogInsightsSection"},
+        {type:"categoriesListeningSection"}
     ],
     }),
   ],

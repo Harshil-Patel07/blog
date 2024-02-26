@@ -54,12 +54,54 @@ export const headerFields = groq`
       },
     "image":image.asset->url,
     },
+    socialLinks[]{
+      _key,
+     "slug":slug.current,
+      label,
+      linkType,
+    },
 navList[]{
 "link":link{
   label,
   "slug":slug.current
 }
 }
-    
   }
 `;
+
+export const footerFields=groq`
+"footer":footer->{
+ _id,
+    title,
+    socialLinks[]{
+      _key,
+     "slug":slug.current,
+      label,
+      linkType,
+    },
+    links[]{
+      _key,
+   "slug":slug.current,
+      label,
+      linkType,
+    }
+}
+`
+
+
+export const  categoriesListeningSection= groq`
+
+(_type=="categoriesListeningSection")=>{
+_type,
+_key,
+title,
+"allCategories":allCategories[]->{
+  _id,
+title,
+  "categoryLink":categoryLink.current,
+  "categoryImage":categoryImage.asset->url
+}
+  
+} 
+
+`

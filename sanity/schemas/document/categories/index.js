@@ -6,14 +6,19 @@ export default{
     type:"document",
     fields:[
         defineField({
-            name:"categoryTitle",
-            title:"Category Title",
-            type:"customLink"
+            name:"title",
+            title:"Title",
+            type:"string"
+        }),
+        defineField({
+            name:"categoryLink",
+            title:"categoryLink",
+            type:"slug"
         }),
         defineField({
             name:"categoryImage",
             title:"Image",
-            type:"customImage"
+            type:"image"
         })
     ]
 }

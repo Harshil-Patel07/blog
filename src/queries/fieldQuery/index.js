@@ -95,6 +95,8 @@ export const  categoriesListeningSection= groq`
 _type,
 _key,
 title,
+sectionColor,
+  "bannerImage":bannerImage.image.asset->url,
 "allCategories":allCategories[]->{
   _id,
 title,
@@ -105,3 +107,4 @@ title,
 } 
 
 `
+

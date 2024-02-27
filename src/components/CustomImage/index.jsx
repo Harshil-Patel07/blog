@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
+import { urlForImage } from "../../../sanity/lib/image";
+import Image from "next/image";
 
-const CustomImage = ({value}) => {
-    console.log(value)
-  return (
-    <img />
-  )
-}
+const CustomImage = ({ block }) => {
+  const { image, altText } = block || {};
+  return <img src={urlForImage(image.asset)} alt={altText} />;
+};
 
-export default CustomImage
+export default CustomImage;

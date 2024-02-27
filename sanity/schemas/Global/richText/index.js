@@ -15,14 +15,19 @@ export default {
         {title: 'H5', value: 'h5'},
         {title: 'H6', value: 'h6'},
         {title: 'Quote', value: 'blockquote'},
+        {title: 'Section Heading', value: 'sectionHeading'},
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
-      lists: [{title: 'number', value: 'number'}],
+      lists: [
+        {title: 'Bullet', value: 'bullet'},
+        {title: 'number', value: 'number'}
+      ],
+    
 
       marks: {
         decorators: [
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
+          {title: 'Code', value: 'code'},
         ],
         annotations: [
           {
@@ -37,6 +42,7 @@ export default {
               },
             ],
           },
+        
         ],
       },
     },
@@ -48,6 +54,7 @@ export default {
     },
     {
       type:"customButton"
-    }
+    },
+   
   ],
 }

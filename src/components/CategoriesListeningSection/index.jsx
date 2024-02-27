@@ -2,9 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CategoriesListeningSection = ({ block }) => {
-  const { title, allCategories } = block || {};
+  const { title, allCategories,sectionColor,bannerImage } = block || {};
   return (
     <div>
+     <Image src={bannerImage} alt="image" width={500} height={500}/>
       <h2>{title}</h2>
 
       <ul className="flex flex-col gap-[1rem]">

@@ -1,4 +1,5 @@
 import { defineField } from "sanity";
+import { sectionColor } from "../../../constants";
 
 export default {
   name: "categoriesListeningSection",
@@ -9,6 +10,22 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+    }),
+    defineField({
+      name: "sectionColor",
+      title: "Section Color",
+      type: "string",
+      options: {
+        list: sectionColor,
+        layout: "radio",
+        direction: "horizontal",
+      },
+      initialValue: "white",
+    }),
+    defineField({
+      name:"bannerImage",
+      title:"Banner Image",
+      type:"customImage"
     }),
     defineField({
       name: "allCategories",

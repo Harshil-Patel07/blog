@@ -12,7 +12,6 @@ console.log(subTitle)
         {authorName && <p>{authorName}</p>}
         {subTitle.map((item)=>{})}
       <RichText  blocks={subTitle}/>
-
       </div>
       <div>
         {image && (

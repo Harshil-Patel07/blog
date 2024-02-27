@@ -28,3 +28,33 @@ ${categoriesListeningSection}
 }
 
 `;
+
+
+export const blogPageData=groq`
+*[_type=="blogs"]| order(publishDate asc){
+ _type,
+   _id,
+   title,
+   description,
+   content,
+   publishDate,
+   isPopulare,
+   "author":author{
+"name": authorName,
+   "image":authorImage.image.asset->url
+   },
+   "slug":slug.current,
+   "heroImage":heroImage{
+   "image":image.asset->url,
+     altText,
+     hasLink
+   },
+"categoryList":category[]->{
+title,
+ categoryImage{
+    altText,
+   "image":asset->url
+  }
+   },
+}
+`

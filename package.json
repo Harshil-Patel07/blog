@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.7",
     "@portabletext/react": "^3.0.11",
     "@sanity/color-input": "^3.1.1",
     "@sanity/image-url": "^1.0.2",
@@ -16,6 +17,7 @@
     "groq": "^3.30.0",
     "highlight.js": "^11.9.0",
     "next": "14.1.0",
+    "next-auth": "^4.24.6",
     "next-sanity": "^7.1.4",
     "react": "^18",
     "react-dom": "^18",

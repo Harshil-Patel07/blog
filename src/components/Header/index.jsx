@@ -17,7 +17,7 @@ const Header = ({ block }) => {
                 width={50}
                 height={20}
                 alt={altText}
-                className="max-h-[30px] "
+                className="max-h-[30px]"
               />
             )}
           </Link>

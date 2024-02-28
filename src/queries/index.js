@@ -29,8 +29,7 @@ ${categoriesListeningSection}
 
 `;
 
-
-export const blogPageData=groq`
+export const blogPageData = groq`
 *[_type=="blogs"]| order(publishDate asc){
  _type,
    _id,
@@ -57,4 +56,17 @@ title,
   }
    },
 }
-`
+`;
+
+export const categoryFields = groq`
+*[_type=="categories"]{
+_type,
+  _id,
+  "categoryImage":categoryImage{
+  "src":asset->url,
+    altText,
+    "slug":link.slug.current
+  },
+title
+}
+`;
